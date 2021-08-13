@@ -83,7 +83,7 @@ function mostrarClima(datos) {
   const max = KelvinACentigrados(temp_min);
 
   const nombreCiudad = document.createElement('p');
-  nombreCiudad.innerHTML = `Clima en: ${name}`;
+  nombreCiudad.innerHTML = `Weather in: ${name}`;
   nombreCiudad.classList.add('font-bold', 'text-2xl')
 
   const actual = document.createElement('p');
