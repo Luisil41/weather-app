@@ -20,3 +20,5 @@ User must enter a place and a country on the list provided.
 
 App deployed in Heroku, link as follows:
 
+https://upgrade-weather-app.herokuapp.com/
+
