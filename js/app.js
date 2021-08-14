@@ -9,20 +9,21 @@ window.addEventListener('load', () => {
 
 
 function buscarClima(e) {
+  //Evitamos recarga de la página con esta función
     e.preventDefault();
     const ciudad = document.querySelector('#ciudad').value
     const pais = document.querySelector('#pais').value
 
     console.log(ciudad);
     console.log(pais);
-
+  //Ambos campos del formulario deben validarse
     if(ciudad === '' || pais === '') {
         // Hubo un error
         mostrarError('Ambos campos son obligatorios')
 
         return;
     }
-    consultarAPI(ciudad, pais );
+    consultarAPI(ciudad, pais);
 }
 
 function mostrarError(mensaje) {
@@ -36,7 +37,7 @@ function mostrarError(mensaje) {
           <strong class="font-bold">Error!</strong>
           <span class="block sm:inline">${mensaje}</span>
       `;
-
+//En caso de error con el time out lo eliminamos de lo que el usuario visualiza a os 3 segundos
       container.appendChild(alerta);
       setTimeout(() => {
           alerta.remove();
@@ -45,11 +46,11 @@ function mostrarError(mensaje) {
 }
 
 function consultarAPI(ciudad, pais ) {
-        // 1.Consultar la API e imprimir el Resultado...
-        // 2.Leer la url  y agregar el API key
+        // 1.Función para atacar a la API y pintar el resultado
+
     const appId = '31b33df22fe2b492d9b74843003438fe';
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${appId}`;
-
+  // Tras varias pruebas lo introduzco aqui ya que es cuando el usuario le da a buscar y debería ejecutarse aquí
     Spinner();
 
     // query con fetch api
@@ -73,7 +74,9 @@ function consultarAPI(ciudad, pais ) {
 
 function mostrarClima(datos) {
 
-  // Formatear el Clima...
+  // Los datos de la api son en fahrenheit y se busca pasarlos a Cº, hago destructuring de las propiedades del objeto
+  //que interesa mostrar y nuevamente destructuring de un objeto dentro de otro para sacar las temperaturas
+  //se añaden los elementos de manera dinamica al DOM creando un p
 
   const { name, main: { temp, temp_max, temp_min } } = datos;
 
@@ -116,7 +119,7 @@ function KelvinACentigrados(grados) {
   return parseInt( grados - 273.15);
 }
 
-//Eliminar las búsquedas previas de la pantalla
+//Con esta función se limpia el Html de busquedas previas para no sobrecargar la pantalla y que se muestre solo lo que usuario busca
 function limpiarHTML() {
   while(resultado.firstChild) {
       resultado.removeChild(resultado.firstChild);
