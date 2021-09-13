@@ -1,6 +1,8 @@
 # weather-app
 
-Javascript Project for practising fetch, DOM manipulation & Tailwind
+Javascript Project for practising fetch, DOM manipulation & Tailwind.
+
+<img src="./screenshots/Home.png"/>
 
 Main objectives
 
