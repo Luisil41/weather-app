@@ -45,7 +45,7 @@ function mostrarError(mensaje) {
   }
 }
 
-function consultarAPI(ciudad, pais ) {
+function consultarAPI( ciudad, pais ) {
         // 1.Función para atacar a la API y pintar el resultado
 
     const appId = '31b33df22fe2b492d9b74843003438fe';
@@ -94,12 +94,12 @@ function mostrarClima(datos) {
   actual.classList.add('font-bold', 'text-6xl')
 
   const tempMaxima = document.createElement('p');
-  tempMaxima.innerHTML = `Max: ${max} &#8451;`;
+  tempMaxima.innerHTML = `Min: ${min} &#8451;`;
   tempMaxima.classList.add('text-xl')
 
 
   const tempMinima = document.createElement('p');
-  tempMinima.innerHTML = `Min: ${min} &#8451;`;
+  tempMinima.innerHTML = `Max: ${max} &#8451;`;
   tempMinima.classList.add('text-xl')
 
 
@@ -116,7 +116,7 @@ function mostrarClima(datos) {
 
 //Api devuelve en Fahrenheit, funtion para convertir a Celsius
 function KelvinACentigrados(grados) {
-  return parseInt( grados - 273.15);
+  return parseInt( grados - 273.15 );
 }
 
 //Con esta función se limpia el Html de busquedas previas para no sobrecargar la pantalla y que se muestre solo lo que usuario busca
