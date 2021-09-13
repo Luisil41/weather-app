@@ -94,12 +94,12 @@ function mostrarClima(datos) {
   actual.classList.add('font-bold', 'text-6xl')
 
   const tempMaxima = document.createElement('p');
-  tempMaxima.innerHTML = `Max: ${max} &#8451;`;
+  tempMaxima.innerHTML = `Min: ${max} &#8451;`;
   tempMaxima.classList.add('text-xl')
 
 
   const tempMinima = document.createElement('p');
-  tempMinima.innerHTML = `Min: ${min} &#8451;`;
+  tempMinima.innerHTML = `Max: ${min} &#8451;`;
   tempMinima.classList.add('text-xl')
 
 
